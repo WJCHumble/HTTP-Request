@@ -9,8 +9,11 @@
 ## 能力
 
 目前实现了以下几点能力：
+
 1.结合定义好的 `errorCaptured` 统一包裹 `try catch`。
+
 2.超时、网络异常处理。
+
 3.使用 JWT 记录用户登录态情况下，针对 token 过期，触发更新 token 请求，并重新请求
 
 ## errorCaptured 
