@@ -1,0 +1,26 @@
+{
+  "name": "HTTP-Request",
+  "version": "1.0.0",
+  "description": "## 介绍",
+  "main": "ajax.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WJCHumble/HTTP-Request.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WJCHumble/HTTP-Request/issues"
+  },
+  "homepage": "https://github.com/WJCHumble/HTTP-Request#readme",
+  "devDependencies": {
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-json": "^2.0.2",
+    "koa-router": "^9.1.0",
+    "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6"
+  }
+}
