@@ -16,51 +16,71 @@
 
 3.使用 JWT 记录用户登录态情况下，针对 token 过期，触发更新 token 请求，并重新请求
 
-## errorCaptured 
+## errorCaptured
 
 调用 `api` 函数的时候统一通过 `errorCaptured` 调用，避免在代码中反复写 `try catch`：
+
 ```javascript
 export default errorCaptured = async (asyncFun) => {
-	try {
-		// 这里根据接口实际情况接收数据
-		const {code, msg, data} = await asyncFun()
-		if (code) {
-			console.error(msg)
-			return
-		}
-		return [null, data]
-	} catch(err) {
-		console.error(err)
-		return [err, null]
-	}
-}
+  try {
+    // 这里根据接口实际情况接收数据
+    const { code, msg, data } = await asyncFun();
+    if (code) {
+      console.error(msg);
+      return;
+    }
+    return [null, data];
+  } catch (err) {
+    console.error(err);
+    return [err, null];
+  }
+};
 ```
 
 在全局注册 `errorCaptured`，以 `Vue` 为例：
-```javascript
-import errorCaptured from "errorCaptured"
 
-Vue.prototype.$errorCaptured = errorCaptured
+```javascript
+import errorCaptured from "errorCaptured";
+
+Vue.prototype.$errorCaptured = errorCaptured;
 ```
 
 ## 使用介绍
 
 `api.js` 中创建 `api`：
+
+**GET 请求**
+
 ```javascript
-import ajax from "api.ajax.request"
+import ajax from "api.ajax.request";
 
 export const getUserInfo = () => {
-	return ajax({
-		url: "/userInfo",
-		params: {
-			userId: 1
-		},
-		method: "get"
-	})
-}
+  return ajax({
+    url: "/userInfo",
+    params: {
+      userId: 1,
+    },
+    method: "get",
+  });
+};
+```
+
+**POST 请求**
+
+```javascript
+export const getUserInfo = () => {
+  return ajax({
+    url: "/userInfo",
+    data: {
+      userId: 1,
+    },
+    method: "post",
+  });
+};
 ```
 
 以 `Vue` 为例，在 `created` 中调用：
+
 ```javascript
 import { getUserInfo } from "api.js"
 
