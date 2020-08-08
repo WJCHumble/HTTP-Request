@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "## 介绍",
   "main": "ajax.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "node server"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WJCHumble/HTTP-Request.git"
@@ -16,6 +18,7 @@
   },
   "homepage": "https://github.com/WJCHumble/HTTP-Request#readme",
   "devDependencies": {
+    "flyio": "^0.6.14",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
     "koa-json": "^2.0.2",
