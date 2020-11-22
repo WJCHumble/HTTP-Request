@@ -85,9 +85,9 @@ export const getUserInfo = () => {
 import { getUserInfo } from "api.js"
 
 async created() {
-	const [err, data] = await $errorCaptured(getUserInfo)
-	if (data) {
-		// data 存在进行相应的赋值和操作
-	}
+  const [err, data] = await this.$errorCaptured(getUserInfo)
+  if (data) {
+    // data 存在进行相应的赋值和操作
+  }
 }
 ```
